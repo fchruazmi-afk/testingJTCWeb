@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JTC Tax Consultant Layanan Konsultasi Pajak Profesional</title>
+<meta name="description" content="JTC Tax Consultant konsultasi pajak profesional, perencanaan, kepatuhan, dan pendampingan pemeriksaan pajak untuk bisnis di Indonesia.">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== EXPERT HOVER CARD ===== */
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.expert-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+}
+.expert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+  filter: grayscale(20%);
+}
+.expert-card:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+.expert-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,55,.92) 40%, transparent 100%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+.expert-card:hover .expert-overlay {
+  opacity: 1;
+}
+.expert-overlay-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: .25rem;
+}
+.expert-overlay-pos {
+  font-size: .8rem;
+  color: #B71C2B;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+/* Always-visible bottom name strip */
+.expert-name-strip {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: .8rem 1rem;
+  background: linear-gradient(to top, rgba(10,22,55,.85), transparent);
+  transition: opacity .35s ease;
+}
+.expert-card:hover .expert-name-strip { opacity: 0; }
+.expert-strip-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: .88rem;
+  font-weight: 600;
+  color: #fff;
+}
+.expert-strip-pos {
+  font-size: .72rem;
+  color: rgba(255,255,255,.65);
+}
+/* Placeholder avatar when no photo */
+.expert-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg,#1a3a8f,#0d2355);
+  font-family: 'Poppins',sans-serif;
+}
+</style>
+</head>
+<body class="jtc-landing" data-theme="dark">
+
+<div class="scroll-bar" id="jtc-scrollBar"></div>
+
+<!-- NAV -->
+<nav id="jtc-navbar">
+<div class="nav-inner">
+<a href="#jtc-home" class="logo">
+<img src="assets/logo.png" alt="JTC Tax Consultant" class="logo-img">
+</a>
+<ul class="nav-links" id="jtc-navLinks">
+<li><a href="#jtc-about">Tentang Kami</a></li>
+<li><a href="#jtc-services">Layanan</a></li>
+<li><a href="#jtc-experts">Tim Ahli</a></li>
+<li><a href="#jtc-faq">FAQ</a></li>
+<li><a href="#jtc-contact">Kontak</a></li>
+</ul>
+<div class="nav-right">
+<button class="theme-toggle" id="jtc-themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">☀️</button>
+<a href="#jtc-consultation" class="nav-cta">Konsultasi Gratis</a>
+<button class="hamburger" id="jtc-hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="jtc-home">
+<div class="aurora">
+<div class="aurora-blob aurora-1"></div>
+<div class="aurora-blob aurora-2"></div>
+<div class="aurora-blob aurora-3"></div>
+</div>
+<div class="grid-overlay"></div>
+<div class="hero-inner">
+<div class="hero-content">
+<div class="trust-badge"><div class="trust-dot"></div>Mitra Konsultasi Pajak Terpercaya</div>
+<h1>Solusi Pajak Profesional<br>Untuk <span>Pertumbuhan Bisnis</span><br>Yang Berkelanjutan</h1>
+<p class="hero-desc">Membantu bisnis Anda tetap patuh, mengoptimalkan strategi perpajakan, dan mencapai kesuksesan finansial jangka panjang melalui layanan konsultasi pajak yang ahli.</p>
+<div class="hero-actions">
+<a href="#jtc-consultation" class="btn-primary">📅 Jadwalkan Konsultasi</a>
+<a href="#jtc-services" class="btn-secondary">Jelajahi Layanan →</a>
+</div>
+<div class="hero-metrics">
+<div class="metric"><div class="metric-num">100<span>+</span></div><div class="metric-label">Bisnis Telah Dibantu</div></div>
+<div class="metric"><div class="metric-num">98<span>%</span></div><div class="metric-label">Kepuasan Klien</div></div>
+<div class="metric"><div class="metric-num">5<span>+</span></div><div class="metric-label">Tahun Pengalaman</div></div>
+</div>
+</div>
+<div class="hero-visual" id="jtc-heroVisual">
+<canvas id="jtc-heroCanvas"></canvas>
+<div class="float-card">
+<div class="float-card-icon">📊</div>
+<div class="float-card-val accent">100+</div>
+<div class="float-card-label">Bisnis Dibantu</div>
+</div>
+<div class="float-card">
+<div class="float-card-icon">⭐</div>
+<div class="float-card-val green">98%</div>
+<div class="float-card-label">Kepuasan Klien</div>
+</div>
+<div class="float-card">
+<div class="float-card-icon">🏆</div>
+<div class="float-card-val">5+</div>
+<div class="float-card-label">Tahun Pengalaman</div>
+</div>
+<div class="float-card">
+<div class="float-card-icon">🕐</div>
+<div class="float-card-val green">24/7</div>
+<div class="float-card-label">Dukungan Profesional</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+<div class="marquee-track" id="jtc-marquee">
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Manufaktur</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Perdagangan</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Makanan & Minuman</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Ritel</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Teknologi</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Kesehatan</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Konstruksi</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Logistik</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Properti</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Keuangan</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Manufaktur</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Perdagangan</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Makanan & Minuman</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Ritel</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Teknologi</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Kesehatan</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Konstruksi</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Logistik</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Properti</div>
+<div class="marquee-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" fill="#B71C2B" opacity=".6"/></svg>Keuangan</div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="jtc-about">
+<div class="section-inner">
+<div class="about-grid">
+<div class="about-image-wrap">
+<div class="about-image">
+<svg viewBox="0 0 400 300" width="100%" height="100%">
+<defs>
+<radialGradient id="jtc-bg" cx="50%" cy="50%"><stop offset="0%" stop-color="#1a3a8f" stop-opacity=".6"/><stop offset="100%" stop-color="#081634" stop-opacity=".9"/></radialGradient>
+</defs>
+<rect width="400" height="300" fill="url(#jtc-bg)"/>
+<rect x="40" y="60" width="100" height="130" rx="6" fill="#B71C2B" opacity=".25"/>
+<rect x="50" y="50" width="100" height="130" rx="6" fill="#B71C2B" opacity=".5"/>
+<rect x="55" y="70" width="70" height="8" rx="4" fill="#fff" opacity=".7"/>
+<rect x="55" y="84" width="55" height="5" rx="3" fill="#fff" opacity=".4"/>
+<rect x="55" y="95" width="60" height="5" rx="3" fill="#fff" opacity=".4"/>
+<rect x="55" y="106" width="50" height="5" rx="3" fill="#fff" opacity=".4"/>
+<line x1="55" y1="125" x2="115" y2="125" stroke="#fff" stroke-opacity=".2" stroke-width="1"/>
+<rect x="55" y="132" width="80" height="28" rx="6" fill="#fff" fill-opacity=".15"/>
+<text x="95" y="151" text-anchor="middle" fill="#fff" font-size="9" opacity=".9">Pajak Optimal</text>
+<circle cx="240" cy="130" r="70" fill="#1a3a8f" opacity=".4" stroke="#4f7ef7" stroke-width="1.5" stroke-opacity=".3"/>
+<circle cx="240" cy="130" r="50" fill="none" stroke="#B71C2B" stroke-width="1" stroke-dasharray="4 3" stroke-opacity=".5"/>
+<text x="240" y="118" text-anchor="middle" fill="#fff" font-size="11" font-weight="600" opacity=".9">Penghematan Pajak</text>
+<text x="240" y="133" text-anchor="middle" fill="#B71C2B" font-size="18" font-weight="700">32%</text>
+<text x="240" y="148" text-anchor="middle" fill="#fff" font-size="9" opacity=".6">Reduksi YoY</text>
+<rect x="320" y="60" width="60" height="100" rx="6" fill="#0f3372" opacity=".6"/>
+<rect x="328" y="78" width="8" height="66" rx="4" fill="#B71C2B" opacity=".7"/>
+<rect x="342" y="92" width="8" height="52" rx="4" fill="#4f7ef7" opacity=".7"/>
+<rect x="356" y="100" width="8" height="44" rx="4" fill="#10B981" opacity=".7"/>
+</svg>
+</div>
+<div class="about-badge">
+<div class="about-badge-num">5+</div>
+<div class="about-badge-text">Tahun Keunggulan</div>
+</div>
+<div class="about-stats">
+<div class="about-stat"><div class="about-stat-num" style="color:#B71C2B">100+</div><div class="about-stat-label">Klien Dilayani</div></div>
+<div class="about-stat"><div class="about-stat-num" style="color:#10B981">98%</div><div class="about-stat-label">Tingkat Kepuasan</div></div>
+<div class="about-stat"><div class="about-stat-num">6+</div><div class="about-stat-label">Konsultan Profesional</div></div>
+<div class="about-stat"><div class="about-stat-num" style="color:#F59E0B">24/7</div><div class="about-stat-label">Dukungan Klien</div></div>
+</div>
+</div>
+<div>
+<div class="section-tag">Tentang JTC</div>
+<h2 class="section-title">Mitra <span>Konsultasi Pajak</span> Terpercaya Anda Sejak 2021</h2>
+<p class="section-desc" style="max-width:100%;margin-bottom:1.5rem">JTC Tax Consultant didirikan dengan satu tujuan: memberikan panduan pajak yang andal dan berbasis keahlian kepada bisnis dan individu untuk mendukung pertumbuhan berkelanjutan. Selama lebih dari satu dekade, kami telah membangun keahlian mendalam di seluruh aspek perpajakan Indonesia dan internasional.</p>
+<p style="font-size:.9rem;color:rgba(var(--ink),.6);line-height:1.75;margin-bottom:2rem">Tim konsultan pajak bersertifikat kami membawa pengalaman gabungan puluhan tahun di berbagai industri mulai dari UMKM yang baru menapaki kewajiban pajak pertama mereka hingga korporasi multinasional yang merancang struktur lintas batas yang kompleks.</p>
+<div class="vm-cards">
+<div class="vm-card">
+<div class="vm-icon red">🎯</div>
+<div><div class="vm-title">Visi Kami</div><div class="vm-text">Menjadi firma konsultasi pajak paling terpercaya di Indonesia, diakui atas integritas, keahlian, dan hasil nyata bagi klien.</div></div>
+</div>
+<div class="vm-card">
+<div class="vm-icon blue">🚀</div>
+<div><div class="vm-title">Misi Kami</div><div class="vm-text">Memberikan solusi pajak yang personal dan proaktif untuk melindungi serta mengembangkan kepentingan finansial klien melalui kepatuhan dan perencanaan strategis.</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why-section" id="jtc-why">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:.5rem"><div class="section-tag">Mengapa JTC</div></div>
+<h2 class="section-title" style="text-align:center">Mengapa Bisnis Memilih <span>JTC Tax Consultant</span></h2>
+<p class="section-desc" style="text-align:center;max-width:600px;margin:0 auto">Kami melampaui kepatuhan kami menjadi mitra pajak strategis Anda, membantu melihat peluang di mana orang lain hanya melihat kewajiban.</p>
+<div class="why-grid">
+<div class="why-card">
+<div class="why-icon">🎓</div>
+<div class="why-title">Konsultan Pajak Bersertifikat</div>
+<div class="why-desc">Konsultan kami memegang sertifikasi resmi dan selalu mengikuti perkembangan regulasi sehingga Anda tidak pernah melewatkan kewajiban kepatuhan.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">🎯</div>
+<div class="why-title">Solusi Pajak yang Personal</div>
+<div class="why-desc">Tidak ada dua bisnis yang sama. Kami merancang strategi yang disesuaikan dengan industri, skala, dan lintasan pertumbuhan spesifik Anda.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">🛡️</div>
+<div class="why-title">Fokus pada Kepatuhan</div>
+<div class="why-desc">Kami mengelola kewajiban pajak Anda secara proaktif untuk menghilangkan sanksi, memastikan kesiapan audit, dan menjaga kepercayaan regulasi.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">⚡</div>
+<div class="why-title">Respons Cepat</div>
+<div class="why-desc">Masalah pajak yang mendesak membutuhkan perhatian segera. Tim kami memberikan respons yang cepat dan akurat dalam tenggat waktu yang terjamin.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">💡</div>
+<div class="why-title">Saran Berorientasi Bisnis</div>
+<div class="why-desc">Kami menerjemahkan hukum pajak yang kompleks menjadi strategi yang jelas dan dapat ditindaklanjuti, selaras langsung dengan tujuan bisnis Anda.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">🤝</div>
+<div class="why-title">Kemitraan Jangka Panjang</div>
+<div class="why-desc">Kami membangun hubungan, bukan transaksi. Kesuksesan Anda adalah tolok ukur kami, dan kami berinvestasi dalam kesehatan finansial jangka panjang Anda.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="jtc-services">
+<div class="section-inner">
+<div style="text-align: center;">
+    <div class="section-tag">Layanan Kami</div>
+    <h2 class="section-title">Layanan <span>Konsultasi Pajak</span> Lengkap</h2>
+    <p class="section-desc">
+        Dari kepatuhan rutin hingga struktur pajak internasional yang kompleks, kami mencakup setiap dimensi kewajiban pajak Anda.
+    </p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">💼</div>
+<div class="service-title">Konsultasi Pajak</div>
+<div class="service-desc">Panduan strategis mengenai implikasi pajak atas keputusan bisnis, transaksi, dan restrukturisasi perusahaan.</div>
+<a class="service-arrow" href="konsultasi-pajak.html">Pelajari lebih lanjut →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">📈</div>
+<div class="service-title">Perencanaan Pajak</div>
+<div class="service-desc">Strategi proaktif dan berorientasi masa depan untuk meminimalkan beban pajak sambil tetap menjaga kepatuhan penuh.</div>
+<a class="service-arrow" href="Perancanaan-pajak.html">Pelajari lebih lanjut →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">✅</div>
+<div class="service-title">Kepatuhan Pajak</div>
+<div class="service-desc">Persiapan dan pelaporan semua SPT pajak secara akurat dan tepat waktu korporasi, PPN, PPh pemotongan, dan lainnya.</div>
+<a class="service-arrow" href="Kepatuhan-pajak.html">Pelajari lebih lanjut →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">🔍</div>
+<div class="service-title">Pendampingan Pemeriksaan Pajak</div>
+<div class="service-desc">Representasi dan dukungan ahli sepanjang proses pemeriksaan DJP, mulai dari dokumentasi hingga penyelesaian sengketa.</div>
+<a class="service-arrow" href="Pendampingan-pemeriksaan-pajak.html">Pelajari lebih lanjut →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">📋</div>
+<div class="service-title">Reviu Pajak</div>
+<div class="service-desc">Reviu diagnostik komprehensif atas posisi pajak Anda untuk mengidentifikasi risiko, eksposur, dan peluang penghematan.</div>
+<a class="service-arrow" href="Reviu-pajak.html">Pelajari lebih lanjut →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">📈</div>
+<div class="service-title">Konsultasi Keuangan</div>
+<div class="service-desc">Membantu perusahaan mengelola keuangan secara lebih efektif melalui analisis laporan keuangan, perencanaan anggaran, pengelolaan arus kas, dan pengambilan keputusan bisnis yang tepat.</div>
+<a class="service-arrow" href="Konsultasi-keuangan.html">Pelajari lebih lanjut →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">🌏</div>
+<div class="service-title">Pajak Internasional</div>
+<div class="service-desc">Perencanaan pajak lintas batas, optimalisasi tax treaty, dan strukturisasi untuk perusahaan penanaman modal asing.</div>
+<a class="service-arrow" href="Pajak-International.html">Pelajari lebih lanjut →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">⚖️</div>
+<div class="service-title">Penyelesaian Sengketa Pajak</div>
+<div class="service-desc">Penanganan profesional atas keberatan, banding, dan sengketa pajak administratif di hadapan otoritas dan pengadilan pajak.</div>
+<a class="service-arrow" href="Penyelesaian-sangketa-pajak.html">Pelajari lebih lanjut →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="workflow-section" id="jtc-process">
+<div class="section-inner">
+<div style="text-align:center"><div class="section-tag">Proses Kami</div></div>
+<h2 class="section-title" style="text-align:center">Bagaimana Kami <span>Memberikan Hasil</span></h2>
+<p class="section-desc" style="text-align:center;max-width:560px;margin:0 auto 0">Model keterlibatan yang terstruktur dan transparan, dari kontak pertama hingga pemantauan berkelanjutan.</p>
+<div class="workflow-steps">
+<div class="workflow-step"><div class="workflow-num">1</div><div class="workflow-title">Konsultasi</div><div class="workflow-desc">Memahami struktur bisnis, riwayat pajak, dan tujuan utama Anda</div></div>
+<div class="workflow-step"><div class="workflow-num">2</div><div class="workflow-title">Analisis</div><div class="workflow-desc">Reviu mendalam atas laporan keuangan, status kepatuhan, dan eksposur pajak</div></div>
+<div class="workflow-step"><div class="workflow-num">3</div><div class="workflow-title">Strategi</div><div class="workflow-desc">Menyusun peta jalan optimasi pajak yang disesuaikan dan patuh regulasi</div></div>
+<div class="workflow-step"><div class="workflow-num">4</div><div class="workflow-title">Implementasi</div><div class="workflow-desc">Melaksanakan pelaporan, restrukturisasi, dan dokumentasi dengan presisi</div></div>
+<div class="workflow-step"><div class="workflow-num">5</div><div class="workflow-title">Pemantauan</div><div class="workflow-desc">Reviu berkelanjutan dan penyesuaian proaktif agar Anda selalu selangkah lebih maju</div></div>
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+<div class="section-inner">
+<div class="stats-grid">
+<div class="stat-item">
+<div class="stat-num" id="jtc-stat1">0<span>+</span></div>
+<div class="stat-label">Klien Telah Dibantu</div>
+</div>
+<div class="stat-item">
+<div class="stat-num" id="jtc-stat2">0<span>%</span></div>
+<div class="stat-label">Kepuasan Klien</div>
+</div>
+<div class="stat-item">
+<div class="stat-num" id="jtc-stat3">0<span>+</span></div>
+<div class="stat-label">Tahun Pengalaman</div>
+</div>
+<div class="stat-item">
+<div class="stat-num" id="jtc-stat4">24/7</div>
+<div class="stat-label">Dukungan Profesional</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EXPERTS -->
+<section class="experts-section" id="jtc-experts">
+<div class="section-inner">
+<div style="text-align:center"><div class="section-tag">Tim Kami</div></div>
+<h2 class="section-title" style="text-align:center">Kenali Para <span>Ahli Pajak</span> Kami</h2>
+<p class="section-desc" style="text-align:center;max-width:560px;margin:0 auto">Profesional bersertifikat dengan keahlian mendalam dan komitmen penuh terhadap keberhasilan finansial Anda.</p>
+<div class="experts-grid">
+
+  <!-- 1. Muhammad Iqbal -->
+  <div class="expert-card">
+    <div class="expert-placeholder">MI</div>
+    <!-- Ganti baris di atas dengan: <img src="assets/experts/iqbal.jpg" alt="Muhammad Iqbal"> -->
+    <div class="expert-name-strip">
+      <div class="expert-strip-name">Muhammad Iqbal</div>
+      <div class="expert-strip-pos">Direktur</div>
+    </div>
+    <div class="expert-overlay">
+      <div class="expert-overlay-name">Muhammad Iqbal</div>
+      <div class="expert-overlay-pos">Direktur</div>
+    </div>
+  </div>
+
+  <!-- 2. Anggun Setianingrum -->
+  <div class="expert-card">
+    <div class="expert-placeholder" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)">AS</div>
+    <!-- Ganti baris di atas dengan: <img src="assets/experts/anggun.jpg" alt="Anggun Setianingrum"> -->
+    <div class="expert-name-strip">
+      <div class="expert-strip-name">Anggun Setianingrum</div>
+      <div class="expert-strip-pos">Direktur</div>
+    </div>
+    <div class="expert-overlay">
+      <div class="expert-overlay-name">Anggun Setianingrum</div>
+      <div class="expert-overlay-pos">Direktur</div>
+    </div>
+  </div>
+
+  <!-- 3. Intan Dewinta -->
+  <div class="expert-card">
+    <div class="expert-placeholder" style="background:linear-gradient(135deg,#B71C2B,#7f1d1d)">ID</div>
+    <!-- Ganti baris di atas dengan: <img src="assets/experts/intan.jpg" alt="Intan Dewinta"> -->
+    <div class="expert-name-strip">
+      <div class="expert-strip-name">Intan Dewinta</div>
+      <div class="expert-strip-pos">Manajer Akuntansi & Asosiasi Pajak</div>
+    </div>
+    <div class="expert-overlay">
+      <div class="expert-overlay-name">Intan Dewinta</div>
+      <div class="expert-overlay-pos">Manajer Akuntansi & Asosiasi Pajak</div>
+    </div>
+  </div>
+
+  <!-- 4. Nizar Hidayat -->
+  <div class="expert-card">
+    <div class="expert-placeholder" style="background:linear-gradient(135deg,#0f766e,#134e4a)">NH</div>
+    <!-- Ganti baris di atas dengan: <img src="assets/experts/nizar.jpg" alt="Nizar Hidayat"> -->
+    <div class="expert-name-strip">
+      <div class="expert-strip-name">Nizar Hidayat</div>
+      <div class="expert-strip-pos">Partner</div>
+    </div>
+    <div class="expert-overlay">
+      <div class="expert-overlay-name">Nizar Hidayat</div>
+      <div class="expert-overlay-pos">Partner</div>
+    </div>
+  </div>
+
+  <!-- 5. Endang -->
+  <div class="expert-card">
+    <div class="expert-placeholder" style="background:linear-gradient(135deg,#d97706,#78350f)">EN</div>
+    <!-- Ganti baris di atas dengan: <img src="assets/experts/endang.jpg" alt="Endang"> -->
+    <div class="expert-name-strip">
+      <div class="expert-strip-name">Endang</div>
+      <div class="expert-strip-pos">Senior Akuntansi & Asosiasi Pajak</div>
+    </div>
+    <div class="expert-overlay">
+      <div class="expert-overlay-name">Endang</div>
+      <div class="expert-overlay-pos">Senior Akuntansi & Asosiasi Pajak</div>
+    </div>
+  </div>
+
+  <!-- 6. Muhammad Fachrul Azmi -->
+  <div class="expert-card">
+    <img src="assets/Muhammad Fachrul Azmi.png" alt="Muhammad Fachrul Azmi">
+    <!-- Ganti baris di atas dengan: <img src="assets/experts/fachrul.jpg" alt="Muhammad Fachrul Azmi"> -->
+    <div class="expert-name-strip">
+      <div class="expert-strip-name">Muhammad Fachrul Azmi</div>
+      <div class="expert-strip-pos">Junior Akuntansi & Asosiasi Pajak</div>
+    </div>
+    <div class="expert-overlay">
+      <div class="expert-overlay-name">Muhammad Fachrul Azmi</div>
+      <div class="expert-overlay-pos">Junior Akuntansi & Asosiasi Pajak</div>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="jtc-faq">
+<div class="section-inner">
+<div style="text-align:center"><div class="section-tag">FAQ</div></div>
+<h2 class="section-title" style="text-align:center">Pertanyaan yang <span>Sering Diajukan</span></h2>
+<div class="faq-list" id="jtc-faqList">
+<div class="faq-item">
+<button class="faq-q">Bisnis apa saja yang dilayani oleh JTC Tax Consultant?<span class="chevron">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">JTC melayani bisnis dari semua skala mulai dari startup dan UMKM hingga korporasi besar dan perusahaan penanaman modal asing di berbagai industri utama termasuk manufaktur, teknologi, ritel, kesehatan, dan logistik.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Seberapa cepat JTC dapat merespons urusan pajak yang mendesak?<span class="chevron">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">Untuk urusan mendesak, tim kami memberikan respons awal dalam waktu 4 jam pada hari kerja. Kami menawarkan dukungan 24/7 untuk batas waktu kepatuhan kritis dan situasi pemeriksaan agar Anda tidak pernah dibiarkan tanpa panduan.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Bagaimana proses memulai konsultasi pajak dengan JTC?<span class="chevron">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">Cukup kirimkan permintaan konsultasi melalui website kami atau hubungi kantor kami. Kami akan menjadwalkan sesi discovery awal untuk memahami kebutuhan Anda, dilanjutkan dengan proposal terperinci yang menguraikan pendekatan yang kami rekomendasikan beserta struktur biaya.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Apakah JTC menangani urusan pajak internasional untuk perusahaan asing?<span class="chevron">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">Ya, tim pajak internasional kami mengkhususkan diri dalam perencanaan pajak lintas batas, penerapan tax treaty, dan kepatuhan bagi perusahaan penanaman modal asing yang beroperasi di Indonesia.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Di industri apa JTC memiliki keahlian pajak yang paling mendalam?<span class="chevron">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">Keahlian terdalam kami mencakup manufaktur, perdagangan, teknologi, jasa keuangan, properti, dan F&B. Namun, konsultan bersertifikat kami terlatih untuk menangani urusan pajak di semua industri yang diatur di Indonesia.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONSULTATION -->
+<section class="consultation-section" id="jtc-consultation">
+<div class="section-inner">
+<div style="text-align:center"><div class="section-tag">Mulai Sekarang</div></div>
+<h2 class="section-title" style="text-align:center">Jadwalkan <span>Konsultasi Gratis</span> Anda</h2>
+<p class="section-desc" style="text-align:center;max-width:560px;margin:0 auto">Ceritakan bisnis dan kebutuhan pajak Anda. Tim ahli kami siap menghubungi Anda dalam 24 jam.</p>
+<div class="consult-wrap">
+<div class="consult-grid" id="jtc-consultForm">
+<div class="form-group"><label>Nama Lengkap *</label><input type="text" placeholder="Nama lengkap Anda" id="jtc-f-name"></div>
+<div class="form-group"><label>Alamat Email *</label><input type="email" placeholder="email@perusahaan.com" id="jtc-f-email"></div>
+<div class="form-group"><label>Nomor Telepon *</label><input type="tel" placeholder="+62 812 xxxx xxxx" id="jtc-f-phone"></div>
+<div class="form-group"><label>Nama Perusahaan</label><input type="text" placeholder="PT Nama Perusahaan" id="jtc-f-company"></div>
+<div class="form-group full"><label>Layanan yang Dibutuhkan</label>
+<select id="jtc-f-service">
+<option value="">Pilih layanan...</option>
+<option>Konsultasi Pajak</option>
+<option>Perencanaan Pajak</option>
+<option>Kepatuhan Pajak</option>
+<option>Pendampingan Pemeriksaan Pajak</option>
+<option>Reviu Pajak</option>
+<option>Konsultasi Keuangan</option>
+<option>Pajak Internasional</option>
+<option>Penyelesaian Sengketa Pajak</option>
+<option>Lainnya</option>
+</select></div>
+<div class="form-group full"><label>Pesan</label><textarea placeholder="Ceritakan situasi pajak Anda atau hal yang ingin Anda diskusikan..." id="jtc-f-message"></textarea></div>
+<div class="form-group full"><button class="submit-btn" onclick="submitForm()">📅 Jadwalkan Konsultasi Gratis via WhatsApp</button></div>
+<div class="success-msg full" id="jtc-successMsg">✅ Permintaan konsultasi Anda telah terkirim! Kami akan menghubungi Anda melalui WhatsApp dalam 24 jam.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="jtc-contact">
+<div class="section-inner">
+<div class="section-tag">Hubungi Kami</div>
+<h2 class="section-title">Hubungi <span>Kami</span></h2>
+<div class="contact-grid">
+<div>
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<div><div class="contact-label">Alamat Kantor</div><div class="contact-val">World Trade Centre 5, Level 11<br>Jl. Jenderal Sudirman, RT.8/RW.3<br>Karet Kuningan, Setiabudi<br>Jakarta Selatan 12930</div></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📞</div>
+<div><div class="contact-label">Telepon</div><div class="contact-val">+62 21 5790 1234<br>+62 812 1234 5678</div></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">✉️</div>
+<div><div class="contact-label">Email</div><div class="contact-val">info@jtctax.co.id<br>consult@jtctax.co.id</div></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">🕐</div>
+<div><div class="contact-label">Jam Operasional</div><div class="contact-val">Senin – Jumat: 08.00 – 17.00<br>Sabtu: 09.00 – 14.00</div></div>
+</div>
+</div>
+<div class="map-placeholder">
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1489!2d106.8226!3d-6.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e8e5b5e8c3%3A0x3f2f9b5b5b5b5b5b!2sWorld+Trade+Centre+5%2C+Jl.+Jenderal+Sudirman%2C+Jakarta+Selatan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+  width="100%" height="280" style="border:0;border-radius:12px;display:block" allowfullscreen="" loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+<div>
+<div class="contact-form-card">
+<h3>Kirim Pesan</h3>
+<div style="display:flex;flex-direction:column;gap:1rem">
+<div class="form-group"><label>Nama Lengkap</label><input type="text" placeholder="Nama Anda"></div>
+<div class="form-group"><label>Email</label><input type="email" placeholder="email@anda.com"></div>
+<div class="form-group"><label>Subjek</label><input type="text" placeholder="Bagaimana kami bisa membantu?"></div>
+<div class="form-group"><label>Pesan</label><textarea placeholder="Pesan Anda..." style="min-height:120px"></textarea></div>
+<button class="submit-btn" style="width:100%" onclick="sendContactWhatsApp()">💬 Kirim via WhatsApp</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo">
+<img src="assets/logo.png" alt="JTC Tax Consultant" class="logo-img">
+<span>JTC Tax Consultant</span>
+</div>
+<p>Layanan konsultasi pajak profesional yang membantu bisnis mencapai pertumbuhan berkelanjutan melalui perencanaan pajak strategis dan manajemen kepatuhan yang ahli.</p>
+<div class="footer-socials">
+<a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+<a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+<a href="#" class="social-btn" aria-label="Instagram">📷</a>
+<a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Tautan Cepat</h4>
+<ul>
+<li><a href="#jtc-about">Tentang Kami</a></li>
+<li><a href="#jtc-services">Layanan</a></li>
+<li><a href="#jtc-experts">Tim Ahli</a></li>
+<li><a href="#jtc-faq">FAQ</a></li>
+<li><a href="#jtc-contact">Kontak</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Layanan</h4>
+<ul>
+<li><a href="#jtc-services">Konsultasi Pajak</a></li>
+<li><a href="#jtc-services">Perencanaan Pajak</a></li>
+<li><a href="#jtc-services">Kepatuhan Pajak</a></li>
+<li><a href="#jtc-services">Pendampingan Audit</a></li>
+<li><a href="#jtc-services">Konsultasi Keuangan</a></li>
+<li><a href="#jtc-services">Pajak Internasional</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Kontak</h4>
+<ul>
+<li><a href="tel:+622157901234">+62 21 5790 1234</a></li>
+<li><a href="mailto:info@jtctax.co.id">info@jtctax.co.id</a></li>
+<li><a href="#jtc-contact">Jakarta Selatan, Indonesia</a></li>
+<li><a href="#jtc-contact">Sen–Jum, 08.00–17.00</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 JTC Tax Consultant. Hak cipta dilindungi undang-undang. | Dibangun dengan penuh keunggulan.</p>
+<p>Kebijakan Privasi · Syarat Layanan · Kebijakan Cookie</p>
+</div>
+</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+<script>
+// CTA → WhatsApp
+window.submitForm = function(){
+  const name    = document.getElementById('jtc-f-name').value.trim();
+  const email   = document.getElementById('jtc-f-email').value.trim();
+  const phone   = document.getElementById('jtc-f-phone').value.trim();
+  const company = document.getElementById('jtc-f-company').value.trim();
+  const service = document.getElementById('jtc-f-service').value.trim();
+  const message = document.getElementById('jtc-f-message').value.trim();
+  if(!name || !email){ alert('Mohon isi nama dan email Anda.'); return; }
+  const wa = '6282260998931'; // ← Ganti dengan nomor WhatsApp JTC
+  const text = encodeURIComponent(
+    `Halo JTC Tax Consultant 👋\n\n` +
+    `Saya ingin menjadwalkan konsultasi gratis.\n\n` +
+    `📋 *Detail Saya:*\n` +
+    `Nama      : ${name}\n` +
+    `Email     : ${email}\n` +
+    `Telepon   : ${phone||'-'}\n` +
+    `Perusahaan: ${company||'-'}\n` +
+    `Layanan   : ${service||'-'}\n\n` +
+    `💬 *Pesan:*\n${message||'(tidak ada pesan tambahan)'}`
+  );
+  window.open(`https://wa.me/${wa}?text=${text}`, '_blank');
+  document.getElementById('jtc-successMsg').classList.add('show');
+  document.querySelectorAll('#jtc-consultForm input,#jtc-consultForm textarea,#jtc-consultForm select').forEach(function(el){ el.value=''; });
+};
+
+window.sendContactWhatsApp = function(){
+  const wa = '6282260998931'; // ← Ganti dengan nomor WhatsApp JTC
+  window.open(`https://wa.me/${wa}`, '_blank');
+};
+</script>
+</body>
+</html>
