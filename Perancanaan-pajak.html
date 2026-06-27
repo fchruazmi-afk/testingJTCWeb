@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Perencanaan Pajak JTC Tax Consultant</title>
-<meta name="description" content="Panduan strategis mengenai implikasi pajak atas keputusan bisnis, transaksi, dan restrukturisasi perusahaan.">
+<meta name="description" content="Layanan perencanaan pajak strategis untuk membantu bisnis mengoptimalkan beban pajak secara efisien dan patuh terhadap peraturan yang berlaku.">
 <link rel="icon" href="assets/logo.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 <style>
 .service-detail-hero {
   min-height: 60vh;
@@ -263,19 +263,20 @@ position:relative;
 <!-- NAV -->
 <nav id="jtc-navbar">
 <div class="nav-inner">
-<a href="../index.html" class="logo">
-<img src="../assets/logo.png" alt="JTC Tax Consultant" class="logo-img">
+<a href="index.html" class="logo">
+<img src="assets/logo.png" alt="JTC Tax Consultant" class="logo-img">
 </a>
 <ul class="nav-links" id="jtc-navLinks">
-<li><a href="../index.html#jtc-about">Tentang Kami</a></li>
-<li><a href="../index.html#jtc-services">Layanan</a></li>
-<li><a href="../index.html#jtc-experts">Tim Ahli</a></li>
-<li><a href="../index.html#jtc-faq">FAQ</a></li>
-<li><a href="../index.html#jtc-contact">Kontak</a></li>
+<li><a href="index.html#jtc-about" data-i18n="nav.about">Tentang Kami</a></li>
+<li><a href="index.html#jtc-services" data-i18n="nav.services">Layanan</a></li>
+<li><a href="index.html#jtc-experts" data-i18n="nav.experts">Tim Ahli</a></li>
+<li><a href="index.html#jtc-faq" data-i18n="nav.faq">FAQ</a></li>
+<li><a href="index.html#jtc-contact" data-i18n="nav.contact">Kontak</a></li>
 </ul>
 <div class="nav-right">
 <button class="theme-toggle" id="jtc-themeToggle" aria-label="Toggle light/dark theme">☀️</button>
-<a href="../index.html#jtc-consultation" class="nav-cta">Konsultasi Gratis</a>
+<button class="lang-toggle" id="jtc-langToggle" aria-label="Switch language" title="Ganti bahasa">EN</button>
+<a href="index.html#jtc-consultation" class="nav-cta" data-i18n="nav.cta">Konsultasi Gratis</a>
 <button class="hamburger" id="jtc-hamburger" aria-label="Menu">
 <span></span><span></span><span></span>
 </button>
@@ -288,16 +289,16 @@ position:relative;
 <div class="hero-card">
 <div class="hero-grid">
 <div>
-<h1>Apa itu Perencanaan Pajak?</h1>
-<p>Perencanaan Pajak adalah proses strategis untuk mengelola kewajiban perpajakan secara efisien dengan tetap mematuhi peraturan yang berlaku. Melalui perencanaan yang tepat, bisnis dapat mengoptimalkan beban pajak, meningkatkan efisiensi keuangan, dan mendukung pertumbuhan usaha secara berkelanjutan.</p>
+<h1 data-i18n="taxplan.hero.title">Apa itu Perencanaan Pajak?</h1>
+<p data-i18n="taxplan.hero.desc">Perencanaan Pajak adalah proses strategis untuk mengelola kewajiban perpajakan secara efisien dengan tetap mematuhi peraturan yang berlaku. Melalui perencanaan yang tepat, bisnis dapat mengoptimalkan beban pajak, meningkatkan efisiensi keuangan, dan mendukung pertumbuhan usaha secara berkelanjutan.</p>
 <ul>
-<li>Optimalisasi kewajiban pajak sesuai ketentuan yang berlaku.</li>
-<li>Perencanaan transaksi yang lebih efisien dari sisi perpajakan.</li>
-<li>Meningkatkan kepatuhan sekaligus mengurangi risiko pajak di masa depan.</li>
+<li data-i18n="taxplan.hero.li1">Optimalisasi kewajiban pajak sesuai ketentuan yang berlaku.</li>
+<li data-i18n="taxplan.hero.li2">Perencanaan transaksi yang lebih efisien dari sisi perpajakan.</li>
+<li data-i18n="taxplan.hero.li3">Meningkatkan kepatuhan sekaligus mengurangi risiko pajak di masa depan.</li>
 </ul>
 </div>
 <div>
-<img src="assets\Tax planning.png" alt="tax planning">
+<img src="assets/Tax planning.png" alt="tax planning">
 </div>
 </div>
 </div>
@@ -306,59 +307,57 @@ position:relative;
 <!-- CONTENT -->
 <section class="why-section" id="jtc-why">
 <div class="section-inner">
-<h2 class="section-title" style="text-align:center">Jenis Perencanaan <span>Pajak yang Kami Layani</span></h2>
+<h2 class="section-title" style="text-align:center" data-i18n-html="taxplan.services.title">Jenis Perencanaan <span>Pajak yang Kami Layani</span></h2>
 
 <div class="why-grid">
 
 <div class="why-card">
 <div class="why-icon">1</div>
-<div class="why-title">Perencanaan Pajak Perusahaan</div>
-<div class="why-desc">Menyusun strategi perpajakan yang efektif untuk mengoptimalkan kewajiban pajak perusahaan dan mendukung tujuan bisnis jangka panjang.</div>
+<div class="why-title" data-i18n="taxplan.service1.title">Perencanaan Pajak Perusahaan</div>
+<div class="why-desc" data-i18n="taxplan.service1.desc">Menyusun strategi perpajakan yang efektif untuk mengoptimalkan kewajiban pajak perusahaan dan mendukung tujuan bisnis jangka panjang.</div>
 </div>
 
 <div class="why-card">
 <div class="why-icon">2</div>
-<div class="why-title">Perencanaan Transaksi</div>
-<div class="why-desc">Analisis dan perancangan struktur transaksi bisnis agar lebih efisien dari sisi perpajakan tanpa mengabaikan kepatuhan terhadap regulasi.</div>
+<div class="why-title" data-i18n="taxplan.service2.title">Perencanaan Transaksi</div>
+<div class="why-desc" data-i18n="taxplan.service2.desc">Analisis dan perancangan struktur transaksi bisnis agar lebih efisien dari sisi perpajakan tanpa mengabaikan kepatuhan terhadap regulasi.</div>
 </div>
 
 <div class="why-card">
 <div class="why-icon">3</div>
-<div class="why-title">Perencanaan Investasi</div>
-<div class="why-desc">Memberikan solusi perpajakan untuk berbagai pilihan investasi sehingga menghasilkan manfaat finansial yang optimal.</div>
+<div class="why-title" data-i18n="taxplan.service3.title">Perencanaan Investasi</div>
+<div class="why-desc" data-i18n="taxplan.service3.desc">Memberikan solusi perpajakan untuk berbagai pilihan investasi sehingga menghasilkan manfaat finansial yang optimal.</div>
 </div>
 
 <div class="why-card">
 <div class="why-icon">4</div>
-<div class="why-title">Perencanaan Pajak Internasional</div>
-<div class="why-desc">Pendampingan terkait transaksi lintas negara, pemanfaatan tax treaty, dan pengelolaan kewajiban pajak internasional.</div>
+<div class="why-title" data-i18n="taxplan.service4.title">Perencanaan Pajak Internasional</div>
+<div class="why-desc" data-i18n="taxplan.service4.desc">Pendampingan terkait transaksi lintas negara, pemanfaatan tax treaty, dan pengelolaan kewajiban pajak internasional.</div>
 </div>
 
 <div class="why-card">
 <div class="why-icon">5</div>
-<div class="why-title">Perencanaan Pajak Karyawan</div>
-<div class="why-desc">Membantu menyusun skema remunerasi dan tunjangan yang lebih efisien dari sisi perpajakan bagi perusahaan dan karyawan.</div>
+<div class="why-title" data-i18n="taxplan.service5.title">Perencanaan Pajak Karyawan</div>
+<div class="why-desc" data-i18n="taxplan.service5.desc">Membantu menyusun skema remunerasi dan tunjangan yang lebih efisien dari sisi perpajakan bagi perusahaan dan karyawan.</div>
 </div>
 
 <div class="why-card">
 <div class="why-icon">6</div>
-<div class="why-title">Review dan Evaluasi Tax Planning</div>
-<div class="why-desc">Meninjau strategi perpajakan yang telah diterapkan untuk memastikan efektivitas, efisiensi, dan kesesuaiannya dengan regulasi terbaru.</div>
+<div class="why-title" data-i18n="taxplan.service6.title">Review dan Evaluasi Tax Planning</div>
+<div class="why-desc" data-i18n="taxplan.service6.desc">Meninjau strategi perpajakan yang telah diterapkan untuk memastikan efektivitas, efisiensi, dan kesesuaiannya dengan regulasi terbaru.</div>
 </div>
 
 </div>
 </div>
 </section>
-</section>
+
 <!-- CTA SECTION -->
 <div class="cta-section">
-<h2>Siap Mendapatkan Konsultasi Pajak Strategis?</h2>
-<p>Jangan biarkan keputusan bisnis Anda terhambat oleh ketidakpastian pajak. Tim ahli kami siap membantu Anda mengoptimalkan posisi pajak dengan strategi yang terbukti efektif.</p>
-<a href="../index.html#jtc-consultation" class="btn-cta">📅 Jadwalkan Konsultasi Gratis</a>
-<a href="../index.html#jtc-services" class="btn-cta btn-secondary">← Kembali ke Layanan</a>
+<h2 data-i18n="taxplan.cta.title">Siap Mendapatkan Perencanaan Pajak Strategis?</h2>
+<p data-i18n="taxplan.cta.desc">Jangan biarkan keputusan bisnis Anda terhambat oleh ketidakpastian pajak. Tim ahli kami siap membantu Anda mengoptimalkan posisi pajak dengan strategi yang terbukti efektif.</p>
+<a href="index.html#jtc-consultation" class="btn-cta" data-i18n="consult.submit">📅 Jadwalkan Konsultasi Gratis</a>
+<a href="index.html#jtc-services" class="btn-cta btn-secondary" data-i18n="taxplan.back">← Kembali ke Layanan</a>
 </div>
-
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -366,10 +365,10 @@ position:relative;
 <div class="footer-grid">
 <div class="footer-brand">
 <div class="footer-logo">
-<img src="../assets/logo.png" alt="JTC Tax Consultant" class="logo-img">
+<img src="assets/logo.png" alt="JTC Tax Consultant" class="logo-img">
 <span>JTC Tax Consultant</span>
 </div>
-<p>Layanan konsultasi pajak profesional yang membantu bisnis mencapai pertumbuhan berkelanjutan melalui perencanaan pajak strategis dan manajemen kepatuhan yang ahli.</p>
+<p data-i18n="footer.brand">Layanan konsultasi pajak profesional yang membantu bisnis mencapai pertumbuhan berkelanjutan melalui perencanaan pajak strategis dan manajemen kepatuhan yang ahli.</p>
 <div class="footer-socials">
 <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
 <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
@@ -378,42 +377,42 @@ position:relative;
 </div>
 </div>
 <div class="footer-col">
-<h4>Tautan Cepat</h4>
+<h4 data-i18n="footer.quicklinks">Tautan Cepat</h4>
 <ul>
-<li><a href="../index.html#jtc-about">Tentang Kami</a></li>
-<li><a href="../index.html#jtc-services">Layanan</a></li>
-<li><a href="../index.html#jtc-experts">Tim Ahli</a></li>
-<li><a href="../index.html#jtc-faq">FAQ</a></li>
-<li><a href="../index.html#jtc-contact">Kontak</a></li>
+<li><a href="index.html#jtc-about" data-i18n="nav.about">Tentang Kami</a></li>
+<li><a href="index.html#jtc-services" data-i18n="nav.services">Layanan</a></li>
+<li><a href="index.html#jtc-experts" data-i18n="nav.experts">Tim Ahli</a></li>
+<li><a href="index.html#jtc-faq" data-i18n="nav.faq">FAQ</a></li>
+<li><a href="index.html#jtc-contact" data-i18n="nav.contact">Kontak</a></li>
 </ul>
 </div>
 <div class="footer-col">
-<h4>Layanan Lainnya</h4>
+<h4 data-i18n="footer.services">Layanan Lainnya</h4>
 <ul>
-<li><a href="perencanaan-pajak.html">Perencanaan Pajak</a></li>
-<li><a href="kepatuhan-pajak.html">Kepatuhan Pajak</a></li>
-<li><a href="pendampingan-pemeriksaan-pajak.html">Pendampingan Audit</a></li>
-<li><a href="transfer-pricing.html">Transfer Pricing</a></li>
-<li><a href="pajak-internasional.html">Pajak Internasional</a></li>
+<li><a href="Kepatuhan-pajak.html" data-i18n="services.s3">Kepatuhan Pajak</a></li>
+<li><a href="Pendampingan-pemeriksaan-pajak.html" data-i18n="services.s4">Pendampingan Audit</a></li>
+<li><a href="Reviu-pajak.html" data-i18n="services.s5">Reviu Pajak</a></li>
+<li><a href="konsultasi-pajak.html" data-i18n="services.s1">Konsultasi Pajak</a></li>
+<li><a href="Pajak-International.html" data-i18n="services.s7">Pajak Internasional</a></li>
 </ul>
 </div>
 <div class="footer-col">
-<h4>Kontak</h4>
+<h4 data-i18n="footer.contact">Kontak</h4>
 <ul>
 <li><a href="tel:+622157901234">+62 21 5790 1234</a></li>
 <li><a href="mailto:info@jtctax.co.id">info@jtctax.co.id</a></li>
-<li><a href="../index.html#jtc-contact">Jakarta Selatan, Indonesia</a></li>
-<li><a href="../index.html#jtc-contact">Sen–Jum, 08.00–17.00</a></li>
+<li><a href="index.html#jtc-contact">Jakarta Selatan, Indonesia</a></li>
+<li><a href="index.html#jtc-contact" data-i18n="contact.hours.val">Sen–Jum, 08.00–17.00</a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2025 JTC Tax Consultant. Hak cipta dilindungi undang-undang. | Dibangun dengan penuh keunggulan.</p>
-<p>Kebijakan Privasi · Syarat Layanan · Kebijakan Cookie</p>
+<p data-i18n="footer.copyright">© 2025 JTC Tax Consultant. Hak cipta dilindungi undang-undang. | Dibangun dengan penuh keunggulan.</p>
+<p data-i18n="footer.policy">Kebijakan Privasi · Syarat Layanan · Kebijakan Cookie</p>
 </div>
 </div>
 </footer>
 
-<script src="../script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
