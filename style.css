@@ -8,26 +8,22 @@ html{scroll-behavior:smooth}
 html,body{overflow-x:hidden;width:100%}
 
 body.jtc-landing{
-  /* brand colors (constant across themes) */
   --accent:#B71C2B;
   --accent-hover:#9e1724;
   --success:#10B981;
   --warning:#F59E0B;
-
-  /* DARK THEME (default) — exact same palette as the original design */
-  --ink:255,255,255;            /* base "ink" used for text/border/surface opacity tricks */
+  --ink:255,255,255;
   --text:#ffffff;
-  --c1:#081634;                 /* page base / dark-navy */
-  --c2:#0B1F4D;                 /* navy */
-  --c3:#0d2660;                 /* mid blue */
-  --c4:#091a40;                 /* alt section */
-  --c5:#12266a;                 /* stats end */
+  --c1:#081634;
+  --c2:#0B1F4D;
+  --c3:#0d2660;
+  --c4:#091a40;
+  --c5:#12266a;
   --select-bg:#0B1F4D;
   --nav-scrolled:rgba(8,22,52,.92);
   --grid-line:rgba(255,255,255,.025);
   --card-shadow:rgba(0,0,0,.3);
   --tag-text:#f87171;
-
   font-family:'Inter',sans-serif;
   background:var(--c1);
   color:var(--text);
@@ -36,7 +32,7 @@ body.jtc-landing{
 }
 
 body.jtc-landing[data-theme="light"]{
-  --ink:11,31,77;               /* navy ink on light backgrounds */
+  --ink:11,31,77;
   --text:#0B1F4D;
   --c1:#FFFFFF;
   --c2:#EFF3FB;
@@ -67,14 +63,14 @@ body.jtc-landing[data-theme="light"]{
 .jtc-landing .nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
 .jtc-landing .theme-toggle{width:38px;height:38px;border-radius:50%;background:rgba(var(--ink),.08);border:1px solid rgba(var(--ink),.15);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0;transition:.2s}
 .jtc-landing .theme-toggle:hover{background:rgba(var(--ink),.15)}
+.jtc-landing .lang-toggle{width:38px;height:38px;border-radius:50%;background:rgba(var(--ink),.08);border:1px solid rgba(var(--ink),.15);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.75rem;font-weight:700;color:var(--text);flex-shrink:0;transition:.2s}
+.jtc-landing .lang-toggle:hover{background:rgba(var(--ink),.15)}
 .jtc-landing .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;flex-shrink:0}
 .jtc-landing .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
 .jtc-landing .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .jtc-landing .hamburger.active span:nth-child(2){opacity:0}
 .jtc-landing .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* MOBILE NAV PANEL */
-.jtc-landing .nav-links{transition:max-height .3s ease}
 @media(max-width:860px){
   .jtc-landing .nav-links{
     display:flex;flex-direction:column;align-items:flex-start;gap:0;
@@ -214,17 +210,137 @@ body.jtc-landing[data-theme="light"]{
 .jtc-landing .stat-num span{color:var(--accent)}
 .jtc-landing .stat-label{font-size:.9rem;color:rgba(var(--ink),.6);margin-top:.5rem;font-weight:500}
 
-/* EXPERTS */
-.jtc-landing .experts-section{background:var(--c1)}
-.jtc-landing .experts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.jtc-landing .expert-card{background:rgba(var(--ink),.04);border:1px solid rgba(var(--ink),.08);border-radius:20px;padding:1.75rem;text-align:center;transition:all .3s}
-.jtc-landing .expert-card:hover{border-color:rgba(var(--ink),.15);transform:translateY(-5px)}
-.jtc-landing .expert-avatar{width:90px;height:90px;border-radius:50%;margin:0 auto 1rem;background:linear-gradient(135deg,var(--accent),#7e1419);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;border:3px solid rgba(var(--ink),.1)}
-.jtc-landing .expert-name{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;color:var(--text);margin-bottom:.2rem}
-.jtc-landing .expert-pos{font-size:.82rem;color:var(--accent);font-weight:600;margin-bottom:.4rem}
-.jtc-landing .expert-exp{font-size:.78rem;color:rgba(var(--ink),.5)}
-.jtc-landing .expert-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:.75rem}
-.jtc-landing .expert-tag{font-size:.7rem;background:rgba(var(--ink),.07);border:1px solid rgba(var(--ink),.1);color:rgba(var(--ink),.7);padding:.2rem .6rem;border-radius:50px;font-weight:500}
+/* ================================================================
+   EXPERTS - 4 KOLOM SATU BARIS
+   Logo LinkedIn di POJOK KANAN ATAS (absolute)
+   ================================================================ */
+.jtc-landing .experts-section {
+  background: var(--c1);
+}
+
+.jtc-landing .experts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.jtc-landing .expert-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: transform .3s ease;
+}
+
+.jtc-landing .expert-card:hover {
+  transform: translateY(-5px);
+}
+
+.jtc-landing .expert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+  filter: grayscale(20%);
+}
+
+.jtc-landing .expert-card:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+
+.jtc-landing .expert-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,55,.92) 40%, transparent 100%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.jtc-landing .expert-card:hover .expert-overlay {
+  opacity: 1;
+}
+
+/* --- LINKEDIN LOGO - POJOK KANAN ATAS --- */
+.jtc-landing .expert-linkedin-logo {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: brightness(0) invert(1);
+  z-index: 2;
+  object-fit: contain;
+}
+
+.jtc-landing .expert-card:hover .expert-linkedin-logo {
+  opacity: 1;
+}
+
+/* --- NAMA (center) --- */
+.jtc-landing .expert-overlay-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+/* --- POSISI (center) --- */
+.jtc-landing .expert-overlay-pos {
+  font-size: .75rem;
+  color: #B71C2B;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* --- NAME STRIP (bawah, selalu terlihat) --- */
+.jtc-landing .expert-name-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .8rem 1rem;
+  background: linear-gradient(to top, rgba(10,22,55,.85), transparent);
+  transition: opacity .35s ease;
+  text-align: center;
+}
+
+.jtc-landing .expert-card:hover .expert-name-strip {
+  opacity: 0;
+}
+
+.jtc-landing .expert-strip-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: .88rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.jtc-landing .expert-strip-pos {
+  font-size: .72rem;
+  color: rgba(255,255,255,.65);
+}
 
 /* TESTIMONIALS */
 .jtc-landing .testimonials-section{background:linear-gradient(180deg,var(--c4),var(--c1))}
@@ -277,7 +393,7 @@ body.jtc-landing[data-theme="light"]{
 .jtc-landing .contact-form-card{background:rgba(var(--ink),.04);border:1px solid rgba(var(--ink),.08);border-radius:24px;padding:2rem}
 .jtc-landing .contact-form-card h3{font-weight:600;color:var(--text);margin-bottom:1.5rem;font-size:1.1rem}
 
-/* FOOTER (always uses a dark navy band, regardless of theme, for brand contrast) */
+/* FOOTER */
 .jtc-landing footer{background:#050f26;border-top:1px solid rgba(255,255,255,.07);padding:4rem 2rem 2rem}
 .jtc-landing .footer-inner{max-width:1280px;margin:0 auto}
 .jtc-landing .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
@@ -312,7 +428,8 @@ body.jtc-landing[data-theme="light"]{
   .jtc-landing .about-grid,.jtc-landing .contact-grid{grid-template-columns:1fr}
   .jtc-landing .about-image-wrap{padding-top:2rem;max-width:520px;margin:0 auto}
   .jtc-landing .services-grid{grid-template-columns:repeat(2,1fr)}
-  .jtc-landing .experts-grid,.jtc-landing .testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .jtc-landing .experts-grid,
+  .jtc-landing .testimonials-grid{grid-template-columns:repeat(2,1fr)}
   .jtc-landing .why-grid{grid-template-columns:repeat(2,1fr)}
   .jtc-landing .stats-grid{grid-template-columns:repeat(2,1fr);gap:2rem}
   .jtc-landing .footer-grid{grid-template-columns:1fr 1fr;gap:2.5rem 1.5rem}
@@ -337,7 +454,10 @@ body.jtc-landing[data-theme="light"]{
   .jtc-landing .nav-inner{height:64px}
   .jtc-landing .logo-img{height:36px}
   .jtc-landing .nav-cta{padding:.5rem 1rem;font-size:.8rem}
-  .jtc-landing .services-grid,.jtc-landing .experts-grid,.jtc-landing .testimonials-grid,.jtc-landing .why-grid{grid-template-columns:1fr}
+  .jtc-landing .services-grid,
+  .jtc-landing .experts-grid,
+  .jtc-landing .testimonials-grid,
+  .jtc-landing .why-grid{grid-template-columns:1fr}
   .jtc-landing .stats-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
   .jtc-landing .footer-grid{grid-template-columns:1fr;gap:2rem}
   .jtc-landing .hero-metrics{gap:1.25rem;justify-content:center}
